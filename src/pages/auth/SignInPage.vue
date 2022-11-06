@@ -19,8 +19,8 @@ const $q = useQuasar();
 
 const isSubmitLoading = ref(false);
 
-const email = ref('');
-const password = ref('');
+const email = ref('user@null.ru');
+const password = ref('pass');
 
 const rules = {
 	email: {
