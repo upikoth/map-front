@@ -76,7 +76,7 @@ export default {
 
 		const { firstName, email, password, patronymic, secondName } = data;
 
-		return axiosInstance.put('/api/v1/users', {
+		return axiosInstance.put('/api/v1/user', {
 			firstName,
 			password,
 			patronymic,
