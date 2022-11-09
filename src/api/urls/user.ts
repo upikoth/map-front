@@ -89,6 +89,6 @@ export default {
 			return mocks.user.delete(params);
 		}
 
-		return axiosInstance.delete('/api/user', { params });
+		return axiosInstance.delete('/api/v1/user', { params });
 	},
 };

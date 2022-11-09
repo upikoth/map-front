@@ -167,7 +167,15 @@ function handleListingItemClick(
 	_: Event,
 	row: IIndustrialQuarterListItem
 ): void {
-	router.push({ name: PageName.IndustrialQuarterEdit, params: { id: row.id } });
+	redirectToQuarterItem(row.id);
+}
+
+function handleListingCardClick(id: number): void {
+	redirectToQuarterItem(id);
+}
+
+function redirectToQuarterItem(id: number): void {
+	router.push({ name: PageName.IndustrialQuarterEdit, params: { id } });
 }
 
 async function downloadReport(id: number): Promise<void> {
@@ -242,7 +250,7 @@ onCreated();
 		<template v-slot:item="props">
 			<q-card
 				class="full-width q-mb-lg"
-				@click="handleListingItemClick"
+				@click="handleListingCardClick(props.row.id)"
 			>
 				<q-card-section class="text-body1">
 					<div class="q-mb-sm"><b>Id: </b> {{ props.row.id }}</div>
@@ -251,7 +259,10 @@ onCreated();
 						<b>Дата создания: </b>
 						{{ formatDate(props.row.date) }}
 					</div>
-					<div class="q-mb-sm"><b>Площадь: </b> {{ props.row.zuArea }}</div>
+					<div class="q-mb-sm">
+						<b>Площадь: </b>
+						{{ props.row.zuArea ? props.row.zuArea.toFixed(2) : '-' }}
+					</div>
 					<div class="q-mb-sm">
 						<b>Кол-во сотрудников:</b>
 						{{ props.row.workerCount }}

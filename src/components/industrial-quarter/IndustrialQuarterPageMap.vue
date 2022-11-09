@@ -256,7 +256,7 @@ function getDecision(decision: 'include' | 'discuss' | 'exclude'): string {
 				{{ industrialQuarterCommonData.isAffectedByTOKN ? 'Да' : 'Нет' }}
 				<br />
 				<b>Площадь объектов капитального строительства:</b>
-				{{ industrialQuarterCommonData.oksArea }}
+				{{ industrialQuarterCommonData.oksArea.toFixed(2) }}
 				<br />
 				<b>Процент ОКС в аварийном состоянии:</b>
 				{{ industrialQuarterCommonData.oksAccidentRate }}
