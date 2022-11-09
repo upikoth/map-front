@@ -858,13 +858,25 @@ onCreated();
 				{{ zoneCalcCommonData.isAffectedByTOKN ? 'Да' : 'Нет' }}
 				<br />
 				<b>Площадь объектов капитального строительства:</b>
-				{{ zoneCalcCommonData.oksArea }}
+				{{
+					zoneCalcCommonData.oksArea
+						? zoneCalcCommonData.oksArea.toFixed(2)
+						: '-'
+				}}
 				<br />
 				<b>Процент ОКС в аварийном состоянии:</b>
-				{{ zoneCalcCommonData.oksAccidentRate }}
+				{{
+					zoneCalcCommonData.oksAccidentRate
+						? zoneCalcCommonData.oksAccidentRate.toFixed(2)
+						: '-'
+				}}
 				<br />
 				<b>Средний возраст ОКС (лет):</b>
-				{{ zoneCalcCommonData.oksAverageAgeYears }}
+				{{
+					zoneCalcCommonData.oksAverageAgeYears
+						? zoneCalcCommonData.oksAverageAgeYears.toFixed(0)
+						: '-'
+				}}
 				<br />
 				<b>Количество ОКС:</b>
 				{{ zoneCalcCommonData.oksCount }}
@@ -876,7 +888,9 @@ onCreated();
 				{{ zoneCalcCommonData.workerCount }}
 				<br />
 				<b>Площадь земельных участков:</b>
-				{{ zoneCalcCommonData.zuArea }}
+				{{
+					zoneCalcCommonData.zuArea ? zoneCalcCommonData.zuArea.toFixed(2) : '-'
+				}}
 				<br />
 				<b>Количество земельных участков:</b>
 				{{ zoneCalcCommonData.zuCount }}
